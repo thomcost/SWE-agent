@@ -29,4 +29,12 @@ Just want to run it? See [getting started](../index.md) instead!
 
     [:octicons-arrow-right-24: Configuration](../config/config.md)
 
+-   :material-chart-line:{ .lg .middle } __Monitoring Dashboard__
+
+    ---
+
+    Track agent activities and performance metrics.
+
+    [:octicons-arrow-right-24: Dashboard](dashboard.md)
+
 </div>

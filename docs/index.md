@@ -60,6 +60,8 @@ SWE-agent uses [SWE-ReX](https://swe-rex.com/) for sandboxed code execution.
 
 ## 📣 News
 
+* Apr 25: Added monitoring dashboard for real-time agent activity tracking
+* Apr 24: Enhanced with new beginner-friendly config, model comparison tool, and GitHub PR integration
 * Feb 28: [SWE-agent 1.0 + Claude 3.7 is SoTA on SWE-Bench full](https://x.com/KLieret/status/1895487966409298067)
 * Feb 25: [SWE-agent 1.0 + Claude 3.7 is SoTA on SWE-bench verified](https://x.com/KLieret/status/1894408819670733158)
 * Feb 13: [Releasing SWE-agent 1.0: SoTA on SWE-bench light & tons of new features](https://x.com/KLieret/status/1890048205448220849)

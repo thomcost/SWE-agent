@@ -1,0 +1,38 @@
+name: model_comparison
+version: 0.1.0
+install_command: "./install.sh"
+dependencies: []
+tools:
+  - id: compare_models
+    name: compare_models
+    description: "Run the same task with different LLMs and compare their performance"
+    path: "bin/compare_models.py"
+    usage: |
+      Run the same SWE-agent task with different LLMs and compare their performance.
+      
+      Arguments:
+        --task: Task to run (GitHub issue URL, coding challenge, etc.)
+        --models: Comma-separated list of models to compare
+        --config: Config file to use
+        --output: Output directory for results
+      
+      Example:
+        compare_models --task="https://github.com/owner/repo/issues/123" --models="gpt-4o,claude-3-sonnet-20240229" --config="default.yaml" --output="model_comparison_results"
+    input_schema:
+      type: object
+      properties:
+        task:
+          type: string
+          description: "Task to run (GitHub issue URL, coding challenge, etc.)"
+        models:
+          type: string
+          description: "Comma-separated list of models to compare"
+        config:
+          type: string
+          description: "Config file to use"
+          default: "default.yaml"
+        output:
+          type: string
+          description: "Output directory for results"
+          default: "model_comparison_results"
+      required: ["task", "models"]

@@ -1,0 +1,41 @@
+name: github_pr
+version: 0.1.0
+install_command: "./install.sh"
+dependencies: ["git", "gh"]
+tools:
+  - id: create_pr
+    name: create_pr
+    description: "Create a GitHub pull request from SWE-agent's solution"
+    path: "bin/create_pr.py"
+    usage: |
+      Create a GitHub pull request from SWE-agent's solution.
+      
+      Arguments:
+        --repo_path: Path to the repository
+        --branch_name: Name of the branch to create
+        --title: Pull request title
+        --body: Pull request body
+        --base_branch: Base branch (default: main)
+      
+      Example:
+        create_pr --repo_path="/path/to/repo" --branch_name="fix-issue-123" --title="Fix issue #123" --body="This PR fixes the issue #123 by..."
+    input_schema:
+      type: object
+      properties:
+        repo_path:
+          type: string
+          description: "Path to the repository"
+        branch_name:
+          type: string
+          description: "Name of the branch to create"
+        title:
+          type: string
+          description: "Pull request title"
+        body:
+          type: string
+          description: "Pull request body"
+        base_branch:
+          type: string
+          description: "Base branch (default: main)"
+          default: "main"
+      required: ["repo_path", "branch_name", "title", "body"]

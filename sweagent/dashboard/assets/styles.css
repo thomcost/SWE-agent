@@ -1,0 +1,86 @@
+/* Dashboard Styles */
+.dashboard-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.dashboard-title {
+    color: #343a40;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.dashboard-card {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: none;
+}
+
+.card-title {
+    color: #495057;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.charts-row {
+    margin-bottom: 20px;
+}
+
+.log-row {
+    margin-bottom: 20px;
+}
+
+.activity-table {
+    font-size: 0.9rem;
+}
+
+.activity-table th {
+    background-color: #f1f3f5;
+    color: #495057;
+    font-weight: 600;
+}
+
+.success-status {
+    color: #28a745;
+    font-weight: 500;
+}
+
+.failure-status {
+    color: #dc3545;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 10px;
+    }
+    
+    .dashboard-card {
+        margin-bottom: 15px;
+    }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}

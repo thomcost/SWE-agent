@@ -24,12 +24,17 @@ SWE-agent is built and maintained by researchers from Princeton University and S
 
 ## 📣 News
 
+* Apr 25: Added monitoring dashboard for real-time agent activity tracking
+* Apr 24: Enhanced with new beginner-friendly config, model comparison tool, and GitHub PR integration
 * Feb 28: [SWE-agent 1.0 + Claude 3.7 is SoTA on SWE-Bench full](https://x.com/KLieret/status/1895487966409298067)
 * Feb 25: [SWE-agent 1.0 + Claude 3.7 is SoTA on SWE-bench verified](https://x.com/KLieret/status/1894408819670733158)
 * Feb 13: [Releasing SWE-agent 1.0: SoTA on SWE-bench light & tons of new features](https://x.com/KLieret/status/1890048205448220849)
 * Dec 7: [An interview with the SWE-agent & SWE-bench team](https://www.youtube.com/watch?v=fcr8WzeEXyk)
 
 ## 🚀 Get started!
+
+### Quick Start Guide
+See our [QUICKSTART.md](QUICKSTART.md) for a faster way to get up and running.
 
 👉 Try SWE-agent in your browser: [![Open in GitHub Codespaces](https://img.shields.io/badge/Open_in_GitHub_Codespaces-gray?logo=github)](https://codespaces.new/SWE-agent/SWE-agent) ([more information](https://swe-agent.com/latest/installation/codespaces/))
 
@@ -38,6 +43,7 @@ Read our [documentation][docs] to learn more:
 * [Installation](https://swe-agent.com/latest/installation/source/)
 * [Hello world from the command line](https://swe-agent.com/latest/usage/hello_world/)
 * [Benchmarking on SWE-bench](https://swe-agent.com/latest/usage/batch_mode/)
+* [Monitoring Dashboard](http://localhost:8050) (run `python -m sweagent.dashboard.run`)
 * [Frequently Asked Questions](https://swe-agent.com/latest/faq/)
 
 [docs]: https://swe-agent.com
