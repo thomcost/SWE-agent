@@ -3,7 +3,7 @@
 Create a PR using the mock GitHub MCP server.
 
 This script replicates the functionality of create_mcp_pr.sh but uses the mock
-GitHub MCP server instead of Docker, avoiding permission issues.
+GitHub Model Context Protocol (MCP) server instead of Docker, avoiding permission issues.
 """
 
 import os

@@ -1,6 +1,6 @@
 # GitHub MCP Server Integration Guide
 
-This guide describes how to integrate the SWE-agent with GitHub's Machine Callable Protocol (MCP) Server for creating pull requests and issues.
+This guide describes how to integrate the SWE-agent with GitHub's Model Context Protocol (MCP) Server for creating pull requests and issues.
 
 ## Overview
 

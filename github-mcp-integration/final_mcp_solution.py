@@ -2,7 +2,7 @@
 """
 Create GitHub issues using GitHub MCP Server.
 
-This script demonstrates the definitive correct way to use the GitHub MCP Server.
+This script demonstrates the definitive correct way to use the GitHub Model Context Protocol (MCP) Server.
 It creates issues in the specified repository using the official GitHub MCP Docker container.
 """
 

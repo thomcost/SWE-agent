@@ -2,7 +2,7 @@
 """
 Mock GitHub MCP Server for development and testing.
 
-This is a lightweight implementation of the GitHub MCP Server API
+This is a lightweight implementation of the GitHub Model Context Protocol (MCP) Server API
 that can be used for development and testing when the official GitHub
 MCP Server container doesn't work in your environment.
 """

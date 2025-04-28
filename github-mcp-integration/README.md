@@ -1,6 +1,6 @@
 # GitHub MCP Server Integration
 
-This directory contains tools and utilities for integrating with GitHub's Machine Callable Protocol (MCP) Server. These tools enable the SWE-agent to create pull requests and issues programmatically.
+This directory contains tools and utilities for integrating with GitHub's Model Context Protocol (MCP) Server. These tools enable the SWE-agent to create pull requests and issues programmatically.
 
 ## Components
 
