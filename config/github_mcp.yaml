@@ -1,0 +1,61 @@
+agent:
+  templates:
+    system_template: |-
+      SETTING: You are an autonomous programmer, and you're working directly in the command line with a special interface.
+
+      The special interface consists of a file editor that shows you {{WINDOW}} lines of a file at a time.
+      In addition to typical bash commands, you can also use specific commands to help you navigate and edit files.
+      To call a command, you need to invoke it with a function call/tool call.
+
+      Please note that THE EDIT COMMAND REQUIRES PROPER INDENTATION.
+    instance_template: |-
+      We're currently solving the following issue within our repository. Here's the issue text:
+      ISSUE:
+      {{problem_statement}}
+
+      INSTRUCTIONS:
+      Now, you're going to solve this issue on your own. Your terminal session has started and you're in the repository's root directory. You can use any bash commands or the special interface to help you. Edit all the files you need to and run any checks or tests that you want.
+      When you're satisfied with all of the changes you've made, you can submit your changes to the code base by simply running the submit command.
+
+      (Open file: {{open_file}})
+      (Current directory: {{working_dir}})
+      bash-$
+    next_step_template: |-
+      {{observation}}
+      (Open file: {{open_file}})
+      (Current directory: {{working_dir}})
+      bash-$
+    next_step_no_output_template: |-
+      Your command ran successfully and did not produce any output.
+      (Open file: {{open_file}})
+      (Current directory: {{working_dir}})
+      bash-$
+  tools:
+    env_variables:
+      WINDOW: 100
+      OVERLAP: 2
+    bundles:
+      - path: tools/registry
+      - path: tools/defaults
+      - path: tools/search
+      - path: tools/edit_replace
+      - path: tools/submit
+    enable_bash_tool: true
+    parse_function:
+      type: function_calling
+  history_processors:
+    - type: last_n_observations
+      n: 5
+
+model:
+  provider: openai
+  model: gpt-4o
+  temperature: 0.0
+
+run:
+  hooks:
+    - type: github_mcp_pr
+      config:
+        skip_if_commits_reference_issue: false
+        use_docker: true
+        enabled_toolsets: ["repos", "issues", "pull_requests", "users"]

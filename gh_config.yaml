@@ -1,0 +1,27 @@
+# GitHub CLI configuration file
+
+# This file should be copied to ~/.config/gh/config.yaml
+# after adding your GitHub token
+
+# GitHub configuration
+github:
+  user: YOUR_GITHUB_USERNAME
+  oauth_token: YOUR_GITHUB_TOKEN
+
+# Editor configuration
+editor: nano
+
+# When to prompt for authentication
+prompt: enabled
+
+# How to authenticate with GitHub. Options are token, web, or none
+auth_mode: token
+
+# How to display output. Options are auto, plain, or json
+output: auto
+
+# Whether to display the progress bar for file uploads
+progress_bar: true
+
+# Browser to use for web authentication and opening URLs
+browser: default
