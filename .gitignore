@@ -53,6 +53,7 @@ __pycache__/
 .env
 .venv
 venv/
+diagram_venv/
 ENV/
 env/
 *.egg-info/
@@ -60,3 +61,11 @@ dist/
 build/
 *.egg
 *.log
+
+# Temporary project files
+diagram.mmd
+dashboard_demo.py
+dashboard_template.html
+github_mcp_pr_README.md
+test_tools.sh
+use_mock_github_mcp.py
