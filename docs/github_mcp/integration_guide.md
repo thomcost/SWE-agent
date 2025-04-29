@@ -129,10 +129,36 @@ export GITHUB_TOKEN=$(gh auth token)
 curl -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/user
 ```
 
-### Path Forward
+### Test Repository Integration
+
+For testing the GitHub MCP integration, we maintain a dedicated test repository:
+
+- **Repository URL**: https://github.com/thomcost/mcp-test-repo
+- **Local Clone Path**: `/test-repo/mcp-test-repo/`
+
+This repository is specifically designed for testing the MCP integration and contains:
+- Template files for issues and PRs
+- Test files for making changes
+- Example integration code
+
+For detailed information on using this test repository, see the [Test Repository Guide](test_repo_guide.md).
+
+### Example Using the Test Repository
+
+```bash
+# Create a PR in the test repository using the mock MCP server
+python create_pr_with_mock.py \
+  --owner thomcost \
+  --repo mcp-test-repo \
+  --title "Fix test issue" \
+  --body "This PR fixes the test issue" \
+  --branch fix-branch-name
+```
+
+## Path Forward
 
 For new SWE-agent implementations, we recommend:
 
-1. Use the mock server for development and testing
+1. Use the mock server and test repository for development and testing
 2. Implement fallback mechanisms to direct GitHub API if needed
 3. Consider using GitHub CLI or PyGithub for production deployments

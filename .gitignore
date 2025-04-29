@@ -29,9 +29,13 @@ dashboard_venv/
 flask_venv/
 
 # Temporary directories
-test-repo/
 github-mcp-server/
 dashboard_demo/
+
+# Include the test-repo directory for MCP integration
+!test-repo/
+!test-repo/README.md
+!test-repo/mcp-test-repo/.github/
 
 # IDE directories
 ide_extensions/
