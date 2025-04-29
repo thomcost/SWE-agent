@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWE-Agent Dashboard - Static View</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .dashboard-title {
+            color: #343a40;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #dee2e6;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        .card-title {
+            color: #495057;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        .data-container {
+            margin: 15px 0;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .table th, .table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .table th {
+            background-color: #f1f3f5;
+            color: #495057;
+            font-weight: 600;
+        }
+        .success {
+            color: green;
+        }
+        .failure {
+            color: red;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+        .col-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding-right: 15px;
+            padding-left: 15px;
+            box-sizing: border-box;
+        }
+        .col-12 {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            box-sizing: border-box;
+        }
+        @media (max-width: 768px) {
+            .col-6 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+        .chart {
+            width: 100%;
+            height: 250px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .stat-box {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #343a40;
+        }
+        .model-row {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        .model-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .model-stats {
+            display: flex;
+        }
+        .model-stat {
+            margin-right: 15px;
+        }
+        .note {
+            background-color: #e2f3eb;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="dashboard-title">SWE-Agent Dashboard - Static View</h1>
+    
+    <div class="note">
+        <strong>Note:</strong> This is a static snapshot of the dashboard. For real-time monitoring, start the actual dashboard server.
+    </div>
+    
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <h4 class="card-title">Task Success Rate</h4>
+                <div class="data-container">
+                    <div class="chart">
+                        [Success Rate Visualization - 87.5% average]
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Overall Success Rate</div>
+                        <div class="stat-value">87.5%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <h4 class="card-title">Token Usage</h4>
+                <div class="data-container">
+                    <div class="chart">
+                        [Token Usage Visualization - 145,000 tokens/day average]
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Total Tokens Used</div>
+                        <div class="stat-value">1,450,000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h4 class="card-title">Model Performance</h4>
+        <div class="data-container">
+            <div class="model-row">
+                <div class="model-name">GPT-4</div>
+                <div class="model-stats">
+                    <div class="model-stat">
+                        <span class="stat-label">Success Rate:</span>
+                        <span class="success">90%</span>
+                    </div>
+                    <div class="model-stat">
+                        <span class="stat-label">Avg Time:</span>
+                        <span>25.4s</span>
+                    </div>
+                    <div class="model-stat">
+                        <span class="stat-label">Avg Tokens:</span>
+                        <span>3,250</span>
+                    </div>
+                    <div class="model-stat">
+                        <span class="stat-label">Tasks:</span>
+                        <span>120</span>
+                    </div>
+                </div>
+            </div>
+            <div class="model-row">
+                <div class="model-name">Claude-3</div>
+                <div class="model-stats">
+                    <div class="model-stat">
+                        <span class="stat-label">Success Rate:</span>
+                        <span class="success">90.5%</span>
+                    </div>
+                    <div class="model-stat">
+                        <span class="stat-label">Avg Time:</span>
+                        <span>18.2s</span>
+                    </div>
+                    <div class="model-stat">
+                        <span class="stat-label">Avg Tokens:</span>
+                        <span>2,980</span>
+                    </div>
+                    <div class="model-stat">
+                        <span class="stat-label">Tasks:</span>
+                        <span>95</span>
+                    </div>
+                </div>
+            </div>
+            <div class="model-row">
+                <div class="model-name">Gemini</div>
+                <div class="model-stats">
+                    <div class="model-stat">
+                        <span class="stat-label">Success Rate:</span>
+                        <span class="success">89.2%</span>
+                    </div>
+                    <div class="model-stat">
+                        <span class="stat-label">Avg Time:</span>
+                        <span>22.7s</span>
+                    </div>
+                    <div class="model-stat">
+                        <span class="stat-label">Avg Tokens:</span>
+                        <span>3,150</span>
+                    </div>
+                    <div class="model-stat">
+                        <span class="stat-label">Tasks:</span>
+                        <span>65</span>
+                    </div>
+                </div>
+            </div>
+            <div class="model-row">
+                <div class="model-name">Cohere</div>
+                <div class="model-stats">
+                    <div class="model-stat">
+                        <span class="stat-label">Success Rate:</span>
+                        <span class="success">84.4%</span>
+                    </div>
+                    <div class="model-stat">
+                        <span class="stat-label">Avg Time:</span>
+                        <span>15.8s</span>
+                    </div>
+                    <div class="model-stat">
+                        <span class="stat-label">Avg Tokens:</span>
+                        <span>2,450</span>
+                    </div>
+                    <div class="model-stat">
+                        <span class="stat-label">Tasks:</span>
+                        <span>45</span>
+                    </div>
+                </div>
+            </div>
+            <div class="model-row">
+                <div class="model-name">LLaMA-3</div>
+                <div class="model-stats">
+                    <div class="model-stat">
+                        <span class="stat-label">Success Rate:</span>
+                        <span class="success">80%</span>
+                    </div>
+                    <div class="model-stat">
+                        <span class="stat-label">Avg Time:</span>
+                        <span>28.3s</span>
+                    </div>
+                    <div class="model-stat">
+                        <span class="stat-label">Avg Tokens:</span>
+                        <span>3,450</span>
+                    </div>
+                    <div class="model-stat">
+                        <span class="stat-label">Tasks:</span>
+                        <span>30</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h4 class="card-title">Recent Activities</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Agent</th>
+                    <th>Task ID</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Model</th>
+                    <th>Tokens</th>
+                    <th>Time (s)</th>
+                    <th>Error</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2025-04-25 00:15:32</td>
+                    <td>agent-1</td>
+                    <td>task-105</td>
+                    <td>Code Fix</td>
+                    <td class="success">success</td>
+                    <td>GPT-4</td>
+                    <td>2,500</td>
+                    <td>18.5</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2025-04-25 00:10:21</td>
+                    <td>agent-2</td>
+                    <td>task-104</td>
+                    <td>Vulnerability Scan</td>
+                    <td class="failure">failure</td>
+                    <td>Claude-3</td>
+                    <td>1,800</td>
+                    <td>12.3</td>
+                    <td>API rate limit exceeded</td>
+                </tr>
+                <tr>
+                    <td>2025-04-25 00:05:47</td>
+                    <td>agent-1</td>
+                    <td>task-103</td>
+                    <td>Code Review</td>
+                    <td class="success">success</td>
+                    <td>GPT-4</td>
+                    <td>3,200</td>
+                    <td>22.7</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2025-04-24 23:55:12</td>
+                    <td>agent-3</td>
+                    <td>task-102</td>
+                    <td>Documentation</td>
+                    <td class="success">success</td>
+                    <td>Claude-3</td>
+                    <td>2,750</td>
+                    <td>16.8</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2025-04-24 23:48:36</td>
+                    <td>agent-2</td>
+                    <td>task-101</td>
+                    <td>Testing</td>
+                    <td class="success">success</td>
+                    <td>Gemini</td>
+                    <td>2,100</td>
+                    <td>19.4</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2025-04-24 23:41:09</td>
+                    <td>agent-4</td>
+                    <td>task-100</td>
+                    <td>Code Fix</td>
+                    <td class="success">success</td>
+                    <td>GPT-4</td>
+                    <td>2,600</td>
+                    <td>21.2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2025-04-24 23:35:24</td>
+                    <td>agent-1</td>
+                    <td>task-99</td>
+                    <td>Vulnerability Scan</td>
+                    <td class="failure">failure</td>
+                    <td>LLaMA-3</td>
+                    <td>3,400</td>
+                    <td>27.5</td>
+                    <td>Network error</td>
+                </tr>
+                <tr>
+                    <td>2025-04-24 23:28:51</td>
+                    <td>agent-3</td>
+                    <td>task-98</td>
+                    <td>Code Review</td>
+                    <td class="success">success</td>
+                    <td>Claude-3</td>
+                    <td>2,850</td>
+                    <td>18.7</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2025-04-24 23:22:10</td>
+                    <td>agent-2</td>
+                    <td>task-97</td>
+                    <td>Documentation</td>
+                    <td class="success">success</td>
+                    <td>Cohere</td>
+                    <td>2,300</td>
+                    <td>14.6</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2025-04-24 23:15:45</td>
+                    <td>agent-4</td>
+                    <td>task-96</td>
+                    <td>Testing</td>
+                    <td class="success">success</td>
+                    <td>GPT-4</td>
+                    <td>1,950</td>
+                    <td>17.3</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="note">
+        <strong>How to Run the Live Dashboard:</strong>
+        <ol>
+            <li>Make sure all required packages are installed: <code>pip install dash dash-bootstrap-components plotly pandas</code></li>
+            <li>Run the dashboard script: <code>python -m sweagent.dashboard.run</code></li>
+            <li>Open your browser and navigate to <code>http://localhost:8050</code></li>
+        </ol>
+    </div>
+</body>
+</html>
