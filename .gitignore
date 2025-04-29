@@ -39,3 +39,20 @@ ide_extensions/
 # Already copied files
 get-docker.sh
 set_github_token.sh
+
+# Python-specific files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
+.venv
+venv/
+ENV/
+env/
+*.egg-info/
+dist/
+build/
+*.egg
+*.log
