@@ -44,6 +44,7 @@ Read our [documentation][docs] to learn more:
 * [Hello world from the command line](https://swe-agent.com/latest/usage/hello_world/)
 * [Benchmarking on SWE-bench](https://swe-agent.com/latest/usage/batch_mode/)
 * [GitHub MCP Integration](docs/github_mcp/integration_guide.md)
+* [MCP Architecture Diagram](docs/github_mcp/architecture.md)
 * [Test Repository Guide](docs/github_mcp/test_repo_guide.md)
 * [Monitoring Dashboard](http://localhost:8050) (run `python -m sweagent.dashboard.run`)
 * [Frequently Asked Questions](https://swe-agent.com/latest/faq/)

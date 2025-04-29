@@ -6,6 +6,8 @@ This guide describes how to integrate the SWE-agent with GitHub's Model Context 
 
 GitHub MCP Server is a tool that provides a standardized API for interacting with GitHub repositories. The SWE-agent uses this to automate PR and issue creation.
 
+For a visual overview of the integration architecture, see the [Architecture Diagram](architecture.md).
+
 ## Setup Options
 
 There are two main approaches for integration:
