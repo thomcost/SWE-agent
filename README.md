@@ -6,6 +6,8 @@
 
 <p align="center">
   <a href="https://swe-agent.com/latest/"><strong>Documentation</strong></a>&nbsp; | &nbsp;
+  <a href="#github-mcp"><strong>GitHub MCP</strong></a>&nbsp; | &nbsp;
+  <a href="#dashboard"><strong>Dashboard</strong></a>&nbsp; | &nbsp;
   <a href="https://discord.gg/AVEFbBn2rH"><strong>Discord</strong></a>&nbsp; | &nbsp;
   <a href="https://arxiv.org/abs/2405.15793"><strong>Paper</strong></a>
 </p>
@@ -24,6 +26,10 @@ SWE-agent is built and maintained by researchers from Princeton University and S
 
 ## 📣 News
 
+* Apr 28: Added GitHub Model Context Protocol (MCP) integration with complete toolkit
+* Apr 28: Created comprehensive architecture diagrams (SVG/PNG) for system visualization
+* Apr 27: Enhanced dashboard resilience with better error handling and dependency management
+* Apr 26: Added detailed documentation for IDE extensions and PR integration workflow
 * Apr 25: Added monitoring dashboard for real-time agent activity tracking
 * Apr 24: Enhanced with new beginner-friendly config, model comparison tool, and GitHub PR integration
 * Feb 28: [SWE-agent 1.0 + Claude 3.7 is SoTA on SWE-Bench full](https://x.com/KLieret/status/1895487966409298067)
@@ -50,6 +56,55 @@ Read our [documentation][docs] to learn more:
 * [Frequently Asked Questions](https://swe-agent.com/latest/faq/)
 
 [docs]: https://swe-agent.com
+
+## GitHub Model Context Protocol Integration <a name="github-mcp"></a>
+
+<img src="docs/github_mcp/images/architecture_diagram.png" height="300px" alt="GitHub MCP Integration Architecture">
+
+The GitHub Model Context Protocol (MCP) integration enables SWE-agent to programmatically create issues and pull requests in GitHub repositories using standardized APIs. Key features include:
+
+- **Multiple Integration Methods**:
+  - Docker-based GitHub MCP Server for official integration
+  - Mock server implementation for development and testing
+  - Direct GitHub API fallback options
+
+- **Comprehensive Tooling**:
+  - Pre-built scripts for PR and issue creation
+  - Test repository integration as git submodule
+  - Detailed architecture diagrams and documentation
+
+- **Flexible Hooks System**:
+  - PR creation hooks for automatic code fixes
+  - Configurable workflow integration
+  - Error handling and retry mechanisms
+
+Learn more in our [GitHub MCP Integration Guide](docs/github_mcp/integration_guide.md) or explore the [Architecture Diagram](docs/github_mcp/architecture.md).
+
+## Enhanced Monitoring Dashboard <a name="dashboard"></a>
+
+The SWE-agent monitoring dashboard provides real-time insights into agent activities and system performance. Key features include:
+
+- **Real-time Monitoring**:
+  - Track agent activities and execution metrics
+  - View success rates and completion times
+  - Monitor resource utilization
+
+- **Resilient Design**:
+  - Improved error handling and recovery
+  - Graceful dependency management
+  - Cross-platform compatibility
+
+- **Flexible Implementation**:
+  - Multiple dashboard options (HTML, Flask, Dash)
+  - Customizable visualization components
+  - Easy local deployment
+
+To launch the dashboard, run:
+```bash
+python -m sweagent.dashboard.run
+```
+
+Then visit [http://localhost:8050](http://localhost:8050) in your browser.
 
 ## SWE-agent for offensive cybersecurity (EnIGMA) <a name="enigma"></a>
 
