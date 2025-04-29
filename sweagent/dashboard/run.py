@@ -11,12 +11,22 @@ from pathlib import Path
 # Add the parent directory to the path so we can import the module
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from sweagent.dashboard.app import app
-from sweagent.dashboard.logger import add_sample_data, initialize_db
+try:
+    from sweagent.dashboard.app import app
+    from sweagent.dashboard.logger import add_sample_data, initialize_db
+    IMPORTS_SUCCESSFUL = True
+except ImportError:
+    IMPORTS_SUCCESSFUL = False
+    print("Warning: Could not import dashboard modules. Dependencies might be missing.")
+    print("Please install required packages with: pip install dash dash-bootstrap-components plotly")
 
 
 def main():
     """Run the dashboard server."""
+    if not IMPORTS_SUCCESSFUL:
+        print("Error: Dashboard dependencies are missing. Please install them and try again.")
+        return
+
     parser = argparse.ArgumentParser(description="Run the SWE-agent dashboard server")
     parser.add_argument("--host", type=str, default="0.0.0.0", help="Host to bind the server to")
     parser.add_argument("--port", type=int, default=8050, help="Port to bind the server to")
